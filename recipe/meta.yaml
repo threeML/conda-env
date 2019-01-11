@@ -1,0 +1,119 @@
+{% set name = "threeML_meta" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+  script: "echo 'This is a metapackage. Nothing needs to be built'"
+  skip: true  # [win]
+  skip: true  # [py3k]
+
+requirements:
+
+  build:
+
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+
+  run:
+  
+    - python
+    - pip
+    - numpy >=1.6
+    - scipy >=1.0
+    - jupyter
+    - emcee 2.2.*
+    - astropy 2.0.*
+    - matplotlib 2.1.*
+    - uncertainties 3.0.*
+    - pyyaml 3.12.*
+    - dill
+    - iminuit 1.3.*
+    - astroquery 0.3.*
+    - corner 2.0.*
+    - pandas 0.23.*
+    - requests 2.18.*
+    - speclite 0.7.*
+    - multinest 3.10.*
+    - pymultinest 2.6.*
+    - pygmo 2.4.*
+    - ipython 5.7.*
+    - ipywidgets
+    - ipyparallel 6.1.*
+    - py 1.5.*
+    - numdifftools 0.9.*
+    - hdf5 1.8.*
+    - pytables 3.4.*
+    - root5 5.34.*
+    - root_numpy 4.7.*
+    - pytest 3.10.*
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+    - conda
+    - fermitools
+    - git
+    - numexpr 2.6.5
+    - numba 0.38
+    - healpy 1.11.*
+    - reproject 0.4.*
+    - fermipy
+
+test:
+  
+  imports:
+  
+    - ROOT
+    - root_numpy
+    - pymultinest
+    - numpy
+    - scipy
+    - emcee
+    - astropy
+    - uncertainties
+    - yaml
+    - dill
+    - iminuit
+    - astroquery
+    - corner
+    - pandas
+    - requests
+    - speclite
+    - pygmo
+    - ipywidgets
+    - IPython
+    - ipyparallel
+    - py
+    - numdifftools
+    - tables
+    - UnbinnedAnalysis
+    - numexpr
+    - numba
+    - healpy
+    
+  commands:
+  
+    - python -c 'import os;os.environ["MPLBACKEND"]="Agg";import matplotlib.pyplot as plt'
+
+about:
+  home: http://github.com/threeML/threeML-meta
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: 'Meta package for the dependencies of 3ML and astromodels'
+
+  # The remaining entries in this section are optional, but recommended
+  description: |
+    3ML is a software for the analysis of astrophysical spectral and
+    imaging data. Astromodels is an accompanying package defining
+    the models. This meta-package contains the dependencies of both.
+  dev_url: https://github.com/threeML/threeML-meta
+
+extra:
+  recipe-maintainers:
+    - giacomov
+
