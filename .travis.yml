@@ -31,8 +31,11 @@ before_script:
 script:
 
 #- bash make_environment.sh
-- echo "TEST" > threeML_env.tar.gz
+- tar c * > threeML_env.tar.gz
 - mv threeML_env.tar.gz threeML_env_${TRAVIS_OS_NAME}.tar.gz
+- cp install_3ML_env.sh.in install_3ML_env_${TRAVIS_OS_NAME}.sh 
+- echo "PAYLOAD:" >> install_3ML_env_${TRAVIS_OS_NAME}.sh 
+- cat threeML_env.tar.gz >> install_3ML_env_${TRAVIS_OS_NAME}.sh 
 
 before_deploy:
   # Set up git user name and tag this commit
@@ -45,7 +48,7 @@ deploy:
 
   provider: releases
   api_key: $GH_TOKEN
-  file: threeML_env_${TRAVIS_OS_NAME}.tar.gz
+  file: install_3ML_env_${TRAVIS_OS_NAME}.sh 
   skip_cleanup: true
 
 env:
