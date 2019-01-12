@@ -67,8 +67,8 @@ requirements:
     - conda
     - fermitools
     - git
-    - numexpr 2.6.5
-    - numba 0.38
+    - numexpr 2.6.*
+    - numba 0.38.*
     - healpy 1.11.*
     - reproject 0.4.*
     - fermipy
