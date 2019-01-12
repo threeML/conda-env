@@ -14,7 +14,6 @@ conda create -y --name threeML_env --use-local ${channels} threeML_meta
 conda install -c conda-forge -y conda-pack
 
 # Build the tar file
-cd ${HOME}
 source activate threeML_env
 conda pack -o threeML_env.tar.gz
 
