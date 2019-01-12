@@ -76,7 +76,7 @@ requirements:
 test:
   
   imports:
-  
+    - UnbinnedAnalysis  
     - ROOT
     - root_numpy
     - pymultinest
@@ -100,7 +100,6 @@ test:
     - py
     - numdifftools
     - tables
-    - UnbinnedAnalysis
     - numexpr
     - numba
     - healpy
