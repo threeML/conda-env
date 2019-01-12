@@ -1,5 +1,15 @@
+#########################################################
+# REMEMBER TO BUMP UP THE VERSION IF YOU MODIFY THIS    #
+# (by version I mean the part in the {% set version ... #
+# thing)                                                #
+#########################################################
+
+# NOTE: do not remove any space from the following
+# two declarations, i.e., "set version = " must stay like
+# that, with a space before the = and a space after
+
 {% set name = "threeML_meta" %}
-{% set version = "1.0.0" %}
+{% set version = "0.0.1" %}
 
 package:
   name: {{ name|lower }}

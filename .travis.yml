@@ -32,19 +32,20 @@ script:
 
 #- bash make_environment.sh
 - echo "TEST" > threeML_env.tar.gz
+- mv threeML_env.tar.gz threeML_env_${TRAVIS_OS_NAME}.tar.gz
 
 before_deploy:
   # Set up git user name and tag this commit
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(cat recipe/meta.yaml | grep -Po 'set version = "\K(.+)" .+' | cut -f1 -d'"')}
   - git tag $TRAVIS_TAG
   
 deploy:
 
   provider: releases
   api_key: $GH_TOKEN
-  file: threeML_env.tar.gz
+  file: threeML_env_${TRAVIS_OS_NAME}.tar.gz
   skip_cleanup: true
 
 env:
