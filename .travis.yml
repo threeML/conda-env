@@ -35,7 +35,7 @@ script:
 - mv threeML_env.tar.gz threeML_env_${TRAVIS_OS_NAME}.tar.gz
 - cp install_3ML_env.sh.in install_3ML_env_${TRAVIS_OS_NAME}.sh 
 - echo "PAYLOAD:" >> install_3ML_env_${TRAVIS_OS_NAME}.sh 
-- cat threeML_env.tar.gz >> install_3ML_env_${TRAVIS_OS_NAME}.sh 
+- cat threeML_env_${TRAVIS_OS_NAME}.tar.gz >> install_3ML_env_${TRAVIS_OS_NAME}.sh 
 
 before_deploy:
   # Set up git user name and tag this commit
