@@ -32,8 +32,8 @@ before_script:
   
 script:
 
-#- bash make_environment.sh
-- tar c * > threeML_env.tar.gz
+- bash make_environment.sh
+#- tar c * > threeML_env.tar.gz
 - mv threeML_env.tar.gz threeML_env_${TRAVIS_OS_NAME}.tar.gz
 - cp install_3ML_env.sh.in install_3ML_env_${TRAVIS_OS_NAME}.sh 
 - echo "PAYLOAD:" >> install_3ML_env_${TRAVIS_OS_NAME}.sh 
