@@ -50,7 +50,7 @@ requirements:
     - speclite 0.7.*
     - multinest 3.10.*
     - pymultinest 2.6.*
-    - pygmo 2.4.*
+    - pygmo 2.10.*
     - ipython 5.7.*
     - ipywidgets
     - ipyparallel 6.1.*
