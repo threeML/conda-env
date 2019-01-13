@@ -9,7 +9,7 @@
 # that, with a space before the = and a space after
 
 {% set name = "threeML_meta" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -75,7 +75,6 @@ requirements:
     - speclite 0.7.*
     - uncertainties 3.0.*
     - zeromq 4.2.*
-    - cppzeromq
     
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -87,7 +86,7 @@ requirements:
 test:
   
   imports:
-     - root_numpy
+    - root_numpy
     - pygmo
     - ROOT
     - UnbinnedAnalysis  
