@@ -9,7 +9,7 @@
 # that, with a space before the = and a space after
 
 {% set name = "threeML_meta" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -50,7 +50,7 @@ requirements:
     - speclite 0.7.*
     - multinest 3.10.*
     - pymultinest 2.6.*
-    - pygmo 2.10.*
+    - pygmo >=2.4
     - ipython 5.7.*
     - ipywidgets
     - ipyparallel 6.1.*
