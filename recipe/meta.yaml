@@ -92,7 +92,6 @@ test:
     - pandas
     - requests
     - speclite
-    - pygmo
     - ipywidgets
     - IPython
     - ipyparallel
