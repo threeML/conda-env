@@ -15,6 +15,10 @@ conda install -c conda-forge -y conda-pack
 
 # Build the tar file
 source activate threeML_env
+
+python -c "import ROOT"
+python -c "import pygmo"
+
 conda pack -o threeML_env.tar.gz
 
 echo "Package size: "`du -h threeML_env.tar.gz`
