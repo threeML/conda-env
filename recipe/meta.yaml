@@ -30,60 +30,67 @@ requirements:
     - {{ compiler('fortran') }}
 
   run:
-    - toolchain
     - python
     - pip
-    - numpy >=1.6
-    - scipy >=1.0
-    - jupyter
-    - emcee 2.2.*
+    - algopy 0.5.*
     - astropy 2.0.*
-    - matplotlib 2.1.*
-    - uncertainties 3.0.*
-    - pyyaml 3.12.*
-    - dill
-    - iminuit 1.3.*
     - astroquery 0.3.*
-    - corner 2.0.*
-    - pandas 0.23.*
-    - requests 2.18.*
-    - speclite 0.7.*
-    - multinest 3.10.*
-    - pymultinest 2.6.*
-    - pygmo >=2.4
-    - nlopt 2.4.*
+    - blas 1.1.*
     - boost 1.63.*
-    - zeromq
-    - cppzmq
-    - ipython 5.7.*
-    - ipywidgets
-    - ipyparallel 6.1.*
-    - py 1.5.*
-    - numdifftools 0.9.*
+    - boost-cpp
+    - corner 2.0.*
+    - cppzmq 4.3.*
+    - dill 0.2.*
+    - emcee 2.2.*
+    - fermipy
+    - gsl 2.2.*
     - hdf5 1.8.*
+    - healpix_cxx 3.31
+    - healpy
+    - iminuit 1.3.*
+    - ipyparallel 6.2.*
+    - ipython 5.8.*
+    - ipywidgets 7.4.*
+    - jupyter 1.0.*
+    - matplotlib 2.1.*
+    - mpi 1.0.*
+    - multinest 3.10.*
+    - nlopt 2.4.*
+    - numba 0.40.*
+    - numdifftools 0.9.*
+    - numexpr 2.6.*
+    - numpy 1.12.*
+    - pandas 0.23.*
+    - py 1.7.*
+    - pygmo 2.4.*
+    - pymultinest 2.6.*
     - pytables 3.4.*
-    - root5
-    - root_numpy 4.7.*
-    - pytest 3.10.*
+    - pytest 3.6.*
+    - pyyaml 3.13.*
+    - requests 2.21.*
+    - reproject 0.4.*
+    - root5 5.34.38.*
+    - root_numpy
+    - scipy 0.19.*
+    - speclite 0.7.*
+    - uncertainties 3.0.*
+    - zeromq 4.2.*
+    - cppzeromq
+    
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - conda
     - fermitools
     - git
-    - numexpr 2.6.*
-    - numba 0.38.*
-    - healpy 1.11.*
-    - reproject 0.4.*
-    - fermipy
 
 test:
   
   imports:
+     - root_numpy
     - pygmo
     - ROOT
     - UnbinnedAnalysis  
-    - root_numpy
     - pymultinest
     - numpy
     - scipy
