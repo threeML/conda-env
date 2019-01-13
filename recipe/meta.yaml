@@ -30,7 +30,7 @@ requirements:
     - {{ compiler('fortran') }}
 
   run:
-  
+    - toolchain
     - python
     - pip
     - numpy >=1.6
@@ -58,7 +58,7 @@ requirements:
     - numdifftools 0.9.*
     - hdf5 1.8.*
     - pytables 3.4.*
-    - root5 5.34*
+    - root5
     - root_numpy 4.7.*
     - pytest 3.10.*
     - {{ compiler('c') }}
@@ -76,6 +76,7 @@ requirements:
 test:
   
   imports:
+    - ROOT
     - UnbinnedAnalysis  
     - root_numpy
     - pymultinest
