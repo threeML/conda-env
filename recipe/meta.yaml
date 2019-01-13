@@ -51,6 +51,10 @@ requirements:
     - multinest 3.10.*
     - pymultinest 2.6.*
     - pygmo >=2.4
+    - nlopt 2.4.*
+    - boost 1.63.*
+    - zeromq
+    - cppzmq
     - ipython 5.7.*
     - ipywidgets
     - ipyparallel 6.1.*
@@ -76,6 +80,7 @@ requirements:
 test:
   
   imports:
+    - pygmo
     - ROOT
     - UnbinnedAnalysis  
     - root_numpy
