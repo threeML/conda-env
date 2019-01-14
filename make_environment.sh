@@ -2,6 +2,8 @@
 
 export channels="-c conda-forge -c fermi -c threeML"
 
+export MPLBACKEND='Agg'
+
 # First, let's build the meta package
 # This downloads all packages as specified into recipe/meta.yaml
 conda build ${channels} recipe --python=2
