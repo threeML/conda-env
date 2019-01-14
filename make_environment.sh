@@ -18,6 +18,11 @@ source activate threeML_env
 python -c "import ROOT"
 python -c "import pygmo"
 
+# This is needed because otherwise conda pack thinks that
+# the package has been installed by pip and exit with an
+# error
+conda install -y -c conda-forge qt
+
 conda pack -o threeML_env.tar.gz
 
 echo "Package size: "`du -h threeML_env.tar.gz`
