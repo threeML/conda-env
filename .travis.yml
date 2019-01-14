@@ -24,8 +24,7 @@ before_install:
       
       bash miniconda.sh -b -p $HOME/miniconda
       export PATH="$HOME/miniconda/bin:$PATH"
-      conda install -y conda-build
-      conda install -y conda-verify
+      conda install -y -c conda-forge conda-pack conda-build conda-verify
 
 before_script:
 
