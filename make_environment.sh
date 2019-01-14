@@ -10,9 +10,6 @@ conda build ${channels} recipe --python=2
 # This will contain all dependencies
 conda create -y --name threeML_env --use-local ${channels} threeML_meta
 
-# Install conda-pack
-conda install -c conda-forge -y conda-pack
-
 # Build the tar file
 source activate threeML_env
 
