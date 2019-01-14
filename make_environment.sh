@@ -19,9 +19,12 @@ python -c "import ROOT"
 python -c "import pygmo"
 
 # This is needed because otherwise conda pack thinks that
-# the package has been installed by pip and exit with an
+# the qt package has been installed by pip and exit with an
 # error
-conda install -y -c conda-forge --force qt
+old_dir=`pwd`
+cd ${CONDA_PREFIX}/bin
+for app in $(find . -name "*.app"); do cp -r $app ./$(echo $app | tr -d "."); done
+cd $old_dir
 
 conda pack -o threeML_env.tar.gz
 
