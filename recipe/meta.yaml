@@ -9,7 +9,7 @@
 # that, with a space before the = and a space after
 
 {% set name = "threeML_meta" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
